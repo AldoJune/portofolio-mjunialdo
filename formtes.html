@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Login Junialdo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+            width: 350px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h1 {
+            font-size: 26px;
+            margin-bottom: 15px;
+            color: #333;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url(form.jpg);
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            height: 100vh;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            background-color: #f3f3f3;
+            transition: all 0.3s ease;
+        }
+        input:focus {
+            border-color: #4568a0;
+            outline: none;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #50aad7;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #4568a0;
+        }
+        .links a {
+            color: #50aad7;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .loading {
+            display: none;
+            margin-top: 10px;
+            color: #50aad7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="loginForm">
+            <h1>Form Login</h1>
+            <input type="text" id="nim" placeholder="NIM" required><p></p>
+            <input type="password" id="password" placeholder="Password" required><p></p>
+            <button type="submit" class="btn">LOGIN</button><p></p>
+            <div class="loading" id="loading">Loading...</div>
+            <div class="links">
+                <a href="#">Lupa Password?</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        const form = document.getElementById('loginForm');
+        const loading = document.getElementById('loading');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nim = document.getElementById('nim').value;
+            const password = document.getElementById('password').value;
+
+            if (nim === ' ' || password === ' ') {
+                alert('Silakan isi semua kolom dengan data yang sesuai.');
+                return;
+            }
+            loading.style.display = 'block';
+            setTimeout(() => {
+                loading.style.display = 'none';
+                alert('Login Berhasil!');
+                
+                window.location.href = 'index.html';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
