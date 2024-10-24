@@ -16,6 +16,7 @@ body{
     overflow-x: hidden;
     background-color: black;
     color: rgb(255, 255, 255);
+    overflow-x: hidden;
 }
 header{
     margin-top: 10px;
