@@ -324,7 +324,6 @@ span{
     }
     .buttons {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Display buttons in two columns */
         gap: 1rem;
     }
     .buttons .btn {
