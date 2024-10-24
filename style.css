@@ -323,7 +323,7 @@ span{
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1.5rem;
     width: 100%;
-}
+    }
     .buttons .btn {
         width: 100%;
         text-align: center;
